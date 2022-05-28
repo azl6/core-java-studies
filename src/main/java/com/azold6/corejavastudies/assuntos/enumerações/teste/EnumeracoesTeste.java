@@ -1,8 +1,8 @@
 package com.azold6.corejavastudies.assuntos.enumerações.teste;
 
-import com.azold6.corejavastudies.assuntos.enumerações.dominio.Cliente;
-import com.azold6.corejavastudies.assuntos.enumerações.dominio.TipoCliente;
-import com.azold6.corejavastudies.assuntos.enumerações.dominio.TipoPagamento;
+import com.azold6.corejavastudies.assuntos.enumerações.domain.Cliente;
+import com.azold6.corejavastudies.assuntos.enumerações.domain.TipoCliente;
+import com.azold6.corejavastudies.assuntos.enumerações.domain.TipoPagamento;
 
 public class EnumeracoesTeste {
 

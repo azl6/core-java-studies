@@ -1,4 +1,4 @@
-package com.azold6.corejavastudies.assuntos.enumerações.dominio;
+package com.azold6.corejavastudies.assuntos.enumerações.domain;
 
 public enum TipoPagamento {
 
