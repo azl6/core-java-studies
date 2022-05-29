@@ -1,6 +1,6 @@
 package com.azold6.corejavastudies.assuntos.collections.iterator.teste;
 
-import com.azold6.corejavastudies.assuntos.collections.iterator.domain.Carro;
+import com.azold6.corejavastudies.domain.Carro;
 
 import java.util.ArrayList;
 import java.util.Iterator;

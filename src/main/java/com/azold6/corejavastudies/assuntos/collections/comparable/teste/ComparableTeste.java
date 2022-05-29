@@ -1,6 +1,7 @@
 package com.azold6.corejavastudies.assuntos.collections.comparable.teste;
 
-import com.azold6.corejavastudies.assuntos.collections.comparable.domain.Carro;
+import com.azold6.corejavastudies.domain.Carro;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

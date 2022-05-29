@@ -1,8 +1,8 @@
-package com.azold6.corejavastudies.assuntos.collections.comparator.domain;
+package com.azold6.corejavastudies.domain;
 
 import java.util.Objects;
 
-public class Carro {
+public class Carro implements Comparable<Carro> {
     private Integer id;
     private String nome;
     private Double preco;
@@ -57,5 +57,25 @@ public class Carro {
 
     public void setPreco(Double preco) {
         this.preco = preco;
+    }
+
+    @Override
+    public int compareTo(Carro outroCarro) {
+        //retorna negativo se this < outroCarro
+        //retorna 0 se this == outroCarro
+        //retorna positivo se this > outroCarro
+        return this.id.compareTo(outroCarro.getId());
+
+        /*forma alternativa:
+
+        if(this.id < outroCarro.getId())
+            return -1;
+        else if (this.id.equals(outroCarro.getId()))
+            return 0;
+        else
+            return 1;
+
+       */
+
     }
 }

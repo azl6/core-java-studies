@@ -1,5 +1,7 @@
 package com.azold6.corejavastudies.assuntos.collections.comparator.domain;
 
+import com.azold6.corejavastudies.domain.Carro;
+
 import java.util.Comparator;
 
 public class CarroByNomeComparator implements Comparator<Carro> {

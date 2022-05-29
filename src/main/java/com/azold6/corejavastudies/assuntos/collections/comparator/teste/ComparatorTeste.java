@@ -1,13 +1,12 @@
 package com.azold6.corejavastudies.assuntos.collections.comparator.teste;
 
-import com.azold6.corejavastudies.assuntos.collections.comparator.domain.Carro;
 import com.azold6.corejavastudies.assuntos.collections.comparator.domain.CarroByIdComparator;
 import com.azold6.corejavastudies.assuntos.collections.comparator.domain.CarroByNomeComparator;
 import com.azold6.corejavastudies.assuntos.collections.comparator.domain.CarroByPrecoComparator;
+import com.azold6.corejavastudies.domain.Carro;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class ComparatorTeste {

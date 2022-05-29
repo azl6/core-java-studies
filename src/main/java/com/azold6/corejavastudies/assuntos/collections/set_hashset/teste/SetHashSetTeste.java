@@ -1,6 +1,6 @@
 package com.azold6.corejavastudies.assuntos.collections.set_hashset.teste;
 
-import com.azold6.corejavastudies.assuntos.collections.set_hashset.domain.Carro;
+import com.azold6.corejavastudies.domain.Carro;
 
 import java.util.HashSet;
 import java.util.Set;
