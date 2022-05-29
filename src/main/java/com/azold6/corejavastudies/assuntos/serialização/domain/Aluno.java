@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Aluno implements Serializable {
     private Long id;
     private String nome;
-    private String password;
+    private transient String password;
 
     public Aluno(Long id, String nome, String password) {
         System.out.println("Dentro do construtor");
