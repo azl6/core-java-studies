@@ -1,5 +1,6 @@
 package com.azold6.corejavastudies.assuntos.modelmapper.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,6 +23,7 @@ public class Disciplina {
     private Integer id;
     private String sigla;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "disciplinas")
     List<Aluno> alunos = new ArrayList<>();
 

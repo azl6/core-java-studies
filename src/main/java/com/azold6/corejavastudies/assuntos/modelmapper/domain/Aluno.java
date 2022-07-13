@@ -1,5 +1,7 @@
 package com.azold6.corejavastudies.assuntos.modelmapper.domain;
 
+import com.azold6.corejavastudies.assuntos.modelmapper.serializers.GeneroAlunoSerializer;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,6 +29,11 @@ public class Aluno {
     private Double n3;
     private Date dataNasc;
 
+    //JsonSerializer serve para personalizar os dados expostos na API, via serializador customizado.
+    @JsonSerialize(using = GeneroAlunoSerializer.class)
+    @Enumerated(value = EnumType.STRING)
+    private GeneroAluno generoAluno;
+
     @ManyToMany
     @JoinTable(
             name = "TB_ALUNO_DISCIPLINA",
@@ -34,7 +41,7 @@ public class Aluno {
             inverseJoinColumns = @JoinColumn(name = "CD_DISCIPLINA")
     )
     private List<Disciplina> disciplinas = new ArrayList<>();
-    private GeneroAluno generoAluno;
+
 
 
 }

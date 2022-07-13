@@ -11,6 +11,6 @@ public enum GeneroAluno {
     FEMININO(2, "Feminino");
 
     private Integer codigo;
-    private String nome;
+    private String descricao;
 
 }

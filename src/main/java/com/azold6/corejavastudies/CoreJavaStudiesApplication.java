@@ -2,6 +2,7 @@ package com.azold6.corejavastudies;
 
 import com.azold6.corejavastudies.assuntos.modelmapper.domain.Aluno;
 import com.azold6.corejavastudies.assuntos.modelmapper.domain.Disciplina;
+import com.azold6.corejavastudies.assuntos.modelmapper.domain.GeneroAluno;
 import com.azold6.corejavastudies.assuntos.modelmapper.repository.AlunoRepository;
 import com.azold6.corejavastudies.assuntos.modelmapper.repository.DisciplinaRepository;
 import lombok.AllArgsConstructor;
@@ -45,6 +46,7 @@ public class CoreJavaStudiesApplication implements CommandLineRunner {
 						.n3(8d)
 						.dataNasc(dataNascAlex)
 						.disciplinas(List.of(disciplina1))
+						.generoAluno(GeneroAluno.MASCULINO)
 						.build());
 	}
 }
