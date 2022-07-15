@@ -1,10 +1,9 @@
 package com.azold6.corejavastudies.assuntos.modelmapper.controller;
 
-import com.azold6.corejavastudies.assuntos.modelmapper.domain.Aluno;
-import com.azold6.corejavastudies.assuntos.modelmapper.dto.AlunoResponseDTO;
+import com.azold6.corejavastudies.assuntos.modelmapper.domain.dto.AlunoResponseDTO;
+import com.azold6.corejavastudies.assuntos.modelmapper.mappers.AlunoMapper;
 import com.azold6.corejavastudies.assuntos.modelmapper.repository.AlunoRepository;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,13 +19,13 @@ import java.util.stream.Collectors;
 public class AlunoController {
 
     AlunoRepository alunoRepository;
-    ModelMapper modelMapper;
+    AlunoMapper alunoMapper;
 
     @GetMapping
     public ResponseEntity<List<AlunoResponseDTO>> findAll(){
         return ResponseEntity.ok(alunoRepository.findAll()
                 .stream()
-                .map(aluno -> modelMapper.map(aluno, AlunoResponseDTO.class))
+                .map(aluno -> alunoMapper.domainToResponseDTO(aluno))
                 .collect(Collectors.toList()));
     }
 }

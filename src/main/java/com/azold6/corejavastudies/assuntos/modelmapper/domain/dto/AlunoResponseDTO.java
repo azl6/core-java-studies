@@ -1,6 +1,5 @@
-package com.azold6.corejavastudies.assuntos.modelmapper.dto;
+package com.azold6.corejavastudies.assuntos.modelmapper.domain.dto;
 
-import com.azold6.corejavastudies.assuntos.modelmapper.domain.Disciplina;
 import com.azold6.corejavastudies.assuntos.modelmapper.domain.GeneroAluno;
 import com.azold6.corejavastudies.assuntos.modelmapper.serializers.GeneroAlunoSerializer;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -11,7 +10,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Data
