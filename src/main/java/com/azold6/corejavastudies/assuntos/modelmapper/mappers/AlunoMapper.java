@@ -21,6 +21,19 @@ public class AlunoMapper extends BaseMapper {
     @Autowired
     ModelMapper modelMapper;
 
+    /*  Conversão de DOMAIN para RESPONSEDTO.
+
+         As primeiras 3 linhas escritas são necessárias devido a um bug no ModelMapper.
+         TypeMap é uma classe que determina as duas classes envolvidas na conversão.
+         typeMap.addMappings (no plural) é utilizado quando precisamos de um Converter.
+         Converter é responsável por converter uma classe para outra.
+            Os exemplos abaixo são:
+                -Converter de data de nascimento para idade;
+                -Converter de Enum para String.
+
+         Também é possível realizar conversões mais simples, com o addMapping.
+
+    */
     public AlunoResponseDTO domainToResponseDTO(Aluno aluno){
 
         TypeMap<Aluno, AlunoResponseDTO> typeMap = modelMapper.getTypeMap(Aluno.class, AlunoResponseDTO.class);

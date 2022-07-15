@@ -9,8 +9,14 @@ import java.time.Period;
 import java.time.ZoneId;
 import java.util.Date;
 
+/*
+    BaseMapper. Toda classe que necessita de um mapper deve extender dela, como boa prática.
+ */
 public abstract class BaseMapper {
 
+    /*
+        Exemplo de converter.
+     */
     protected Converter<Date, Integer> idadeConverter(){
         return new AbstractConverter<Date, Integer>() {
             @Override
