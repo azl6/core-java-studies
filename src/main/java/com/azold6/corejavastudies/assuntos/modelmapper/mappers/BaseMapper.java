@@ -1,5 +1,6 @@
 package com.azold6.corejavastudies.assuntos.modelmapper.mappers;
 
+import com.azold6.corejavastudies.assuntos.modelmapper.domain.GeneroAluno;
 import org.modelmapper.AbstractConverter;
 import org.modelmapper.Converter;
 
@@ -17,6 +18,15 @@ public abstract class BaseMapper {
                 return Period.between(date.toInstant()
                         .atZone(ZoneId.systemDefault())
                         .toLocalDate(), LocalDate.now()).getYears();
+            }
+        };
+    }
+
+    protected Converter<GeneroAluno, String> generoConverter(){
+        return new AbstractConverter<GeneroAluno, String>() {
+            @Override
+            protected String convert(GeneroAluno generoAluno) {
+                return generoAluno.getDescricao();
             }
         };
     }

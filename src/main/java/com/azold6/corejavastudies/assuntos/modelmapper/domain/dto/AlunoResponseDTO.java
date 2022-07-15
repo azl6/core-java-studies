@@ -22,11 +22,6 @@ public class AlunoResponseDTO {
     private String nome;
     private Double media;
     private Integer idade;
-
-    //JsonSerializer serve para personalizar os dados expostos na API, via serializador customizado.
-    @JsonSerialize(using = GeneroAlunoSerializer.class)
-    @Enumerated(value = EnumType.STRING)
-    private GeneroAluno generoAluno;
-
+    private String generoAluno;
     private List<DisciplinaResponseDTO> disciplinasDTO = new ArrayList<>();
 }

@@ -23,9 +23,13 @@ public class AlunoMapper extends BaseMapper {
 
     public AlunoResponseDTO domainToResponseDTO(Aluno aluno){
 
-        TypeMap<Aluno, AlunoResponseDTO> typeMap = modelMapper.createTypeMap(Aluno.class, AlunoResponseDTO.class);
+        TypeMap<Aluno, AlunoResponseDTO> typeMap = modelMapper.getTypeMap(Aluno.class, AlunoResponseDTO.class);
 
-        typeMap.addMappings(mapper -> mapper.using(super.idadeConverter()).map(Aluno::getDataNasc, AlunoResponseDTO::setIdade));
+        if (typeMap == null)
+            typeMap = modelMapper.createTypeMap(Aluno.class, AlunoResponseDTO.class);
+
+        typeMap.addMappings(mapper -> mapper.using(super.idadeConverter()).map(Aluno::getDataNasc, AlunoResponseDTO::setIdade))
+                .addMappings(mapper -> mapper.using(super.generoConverter()).map(Aluno::getGeneroAluno, AlunoResponseDTO::setGeneroAluno));
 
         AlunoResponseDTO response = modelMapper.map(aluno, AlunoResponseDTO.class);
         response.setMedia((aluno.getN1() + aluno.getN2() + aluno.getN3())/3);
