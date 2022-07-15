@@ -1,5 +1,7 @@
-package com.azold6.corejavastudies.assuntos.modelmapper.domain;
+package com.azold6.corejavastudies.assuntos.modelmapper.dto;
 
+import com.azold6.corejavastudies.assuntos.modelmapper.domain.Disciplina;
+import com.azold6.corejavastudies.assuntos.modelmapper.domain.GeneroAluno;
 import com.azold6.corejavastudies.assuntos.modelmapper.serializers.GeneroAlunoSerializer;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.AllArgsConstructor;
@@ -13,32 +15,20 @@ import java.util.Date;
 import java.util.List;
 
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-@Entity
-@Table(name = "TB_ALUNO")
-public class Aluno {
+public class AlunoResponseDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
-    private Double n1;
-    private Double n2;
-    private Double n3;
-    private Date dataNasc;
+    private Double media;
+    private Integer idade;
 
     //JsonSerializer serve para personalizar os dados expostos na API, via serializador customizado.
     @JsonSerialize(using = GeneroAlunoSerializer.class)
     @Enumerated(value = EnumType.STRING)
     private GeneroAluno generoAluno;
 
-    @ManyToMany
-    @JoinTable(
-            name = "TB_ALUNO_DISCIPLINA",
-            joinColumns = @JoinColumn(name = "CD_ALUNO"),
-            inverseJoinColumns = @JoinColumn(name = "CD_DISCIPLINA")
-    )
-    private List<Disciplina> disciplinas = new ArrayList<>();
+    private List<DisciplinaResponseDTO> disciplinasDTO = new ArrayList<>();
 }
