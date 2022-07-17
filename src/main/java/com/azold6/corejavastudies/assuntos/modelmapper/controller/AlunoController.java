@@ -25,7 +25,7 @@ public class AlunoController {
     public ResponseEntity<List<AlunoResponseDTO>> findAll(){
         return ResponseEntity.ok(alunoRepository.findAll()
                 .stream()
-                .map(aluno -> alunoMapper.domainToResponseDTO(aluno))
+                .map(alunoMapper::domainToResponseDTO)
                 .collect(Collectors.toList()));
     }
 }
