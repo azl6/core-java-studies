@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,12 +17,12 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AlunoResponseDTO {
+public class AlunoResponseDTO implements Serializable {
 
     private Integer id;
     private String nome;
     private Double media;
     private Integer idade;
     private String generoAluno;
-    private List<DisciplinaResponseDTO> disciplinasDTO = new ArrayList<>();
+    private List<DisciplinaResponseDTO> disciplinas = new ArrayList<>();
 }

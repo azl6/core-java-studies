@@ -2,6 +2,9 @@ package com.azold6.corejavastudies.assuntos.modelmapper.mappers;
 
 import com.azold6.corejavastudies.assuntos.modelmapper.domain.Aluno;
 import com.azold6.corejavastudies.assuntos.modelmapper.domain.dto.AlunoResponseDTO;
+import com.azold6.corejavastudies.assuntos.modelmapper.domain.dto.DisciplinaResponseDTO;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.modelmapper.AbstractConverter;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
@@ -14,12 +17,16 @@ import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class AlunoMapper extends BaseMapper {
 
     @Autowired
     ModelMapper modelMapper;
+    @Autowired
+    DisciplinaMapper disciplinaMapper;
 
     /*  Conversão de DOMAIN para RESPONSEDTO.
 
@@ -46,6 +53,13 @@ public class AlunoMapper extends BaseMapper {
 
         AlunoResponseDTO response = modelMapper.map(aluno, AlunoResponseDTO.class);
         response.setMedia((aluno.getN1() + aluno.getN2() + aluno.getN3())/3);
+
+        List<DisciplinaResponseDTO> disciplinasDTO = aluno.getDisciplinas()
+                                                    .stream()
+                                                    .map(disciplinaMapper::domainToResponseDTO)
+                                                    .collect(Collectors.toList());
+
+        response.setDisciplinas(disciplinasDTO);
 
         return response;
     }
