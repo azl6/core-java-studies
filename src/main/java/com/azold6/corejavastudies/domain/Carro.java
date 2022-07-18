@@ -1,17 +1,30 @@
 package com.azold6.corejavastudies.domain;
 
+import com.azold6.corejavastudies.domain.serializers.PrecoSerializer;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Objects;
 
+@Entity
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Carro implements Comparable<Carro> {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
-    private Double preco;
 
-    public Carro(Integer id, String nome, Double preco) {
-        this.id = id;
-        this.nome = nome;
-        this.preco = preco;
-    }
+    @JsonSerialize(using = PrecoSerializer.class)
+    private Double preco;
 
     @Override
     public String toString() {

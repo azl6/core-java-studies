@@ -5,6 +5,8 @@ import com.azold6.corejavastudies.assuntos.modelmapper.domain.Disciplina;
 import com.azold6.corejavastudies.assuntos.modelmapper.domain.GeneroAluno;
 import com.azold6.corejavastudies.assuntos.modelmapper.repository.AlunoRepository;
 import com.azold6.corejavastudies.assuntos.modelmapper.repository.DisciplinaRepository;
+import com.azold6.corejavastudies.domain.Carro;
+import com.azold6.corejavastudies.domain.repository.CarroRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -23,6 +25,7 @@ public class CoreJavaStudiesApplication implements CommandLineRunner {
 
 	AlunoRepository alunoRepository;
 	DisciplinaRepository disciplinaRepository;
+	CarroRepository carroRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(CoreJavaStudiesApplication.class, args);
@@ -48,5 +51,26 @@ public class CoreJavaStudiesApplication implements CommandLineRunner {
 						.disciplinas(List.of(disciplina1))
 						.generoAluno(GeneroAluno.MASCULINO)
 						.build());
+
+		carroRepository.save(Carro
+							.builder()
+							.id(null)
+							.nome("Gol bolinha")
+							.preco(10000d)
+							.build());
+
+		carroRepository.save(Carro
+				.builder()
+				.id(null)
+				.nome("Ferrari")
+				.preco(1000000d)
+				.build());
+
+		carroRepository.save(Carro
+				.builder()
+				.id(null)
+				.nome("Evoque")
+				.preco(250000d)
+				.build());
 	}
 }
