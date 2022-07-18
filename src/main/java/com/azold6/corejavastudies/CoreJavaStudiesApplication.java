@@ -43,14 +43,14 @@ public class CoreJavaStudiesApplication implements CommandLineRunner {
 		disciplinaRepository.saveAll(List.of(disciplina1, disciplina2));
 
 		alunoRepository.save(Aluno.builder()
-						.nome("Alex")
-						.n1(10d)
-						.n2(5d)
-						.n3(8d)
-						.dataNasc(dataNascAlex)
-						.disciplinas(List.of(disciplina1))
-						.generoAluno(GeneroAluno.MASCULINO)
-						.build());
+							.nome("Alex")
+							.n1(10d)
+							.n2(5d)
+							.n3(8d)
+							.dataNasc(dataNascAlex)
+							.disciplinas(List.of(disciplina1))
+							.generoAluno(GeneroAluno.MASCULINO)
+							.build());
 
 		carroRepository.save(Carro
 							.builder()
@@ -60,17 +60,17 @@ public class CoreJavaStudiesApplication implements CommandLineRunner {
 							.build());
 
 		carroRepository.save(Carro
-				.builder()
-				.id(null)
-				.nome("Ferrari")
-				.preco(1000000d)
-				.build());
+							.builder()
+							.id(null)
+							.nome("Ferrari")
+							.preco(1000000d)
+							.build());
 
 		carroRepository.save(Carro
-				.builder()
-				.id(null)
-				.nome("Evoque")
-				.preco(250000d)
-				.build());
+							.builder()
+							.id(null)
+							.nome("Evoque")
+							.preco(250000d)
+							.build());
 	}
 }
