@@ -8,7 +8,7 @@
   
   [01] - Localiza 0 ou 1
   
-- [<char1>]{<num_ocorrências>} - Localiza uma sequência de <num_ocorrências> de <char1>
+- [\<char1>]{\<num_ocorrências>} - Localiza uma sequência de <num_ocorrências> de \<char1>
 
   Exemplos:
   
