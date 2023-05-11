@@ -79,4 +79,7 @@ Podemos "quebrar" o regex em argumentos, abraçando cada argumento com (<argumen
   Alternativamente ao método acima, é possível criar uma classe de specification "genérica" e reutilizá-la pelo código:
   
   ![image](https://github.com/azl6/java-core-studies/assets/80921933/1a708a09-b072-4bd8-ae41-543ad8263d3f)
-
+  
+  Também é possível fazer um Specification que aceita múltiplas colunas como filtro. Ficará como **DESAFIO!**
+  
+  ![image](https://github.com/azl6/java-core-studies/assets/80921933/afd83c8d-ca7e-4058-9337-d467e34da9cb)
