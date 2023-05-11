@@ -1,4 +1,4 @@
-## REGEX detalhado
+# REGEX detalhado
 
 ![Screenshot from 2022-11-20 20-34-11](https://user-images.githubusercontent.com/80921933/202932602-c3c0ad88-7fed-44de-9577-455c0abc59b2.png)
 
@@ -23,7 +23,7 @@ Podemos "quebrar" o regex em argumentos, abraçando cada argumento com (<argumen
 ![Screenshot from 2022-11-25 13-45-48](https://user-images.githubusercontent.com/80921933/204028148-d9cbbb78-38da-4b8f-a606-6c0c5c258e94.png)
 
 
-## Criação de um .xlsx baixável
+# Criação de um .xlsx baixável
 
 ```java
 @GetMapping("/export")
@@ -57,3 +57,21 @@ Podemos "quebrar" o regex em argumentos, abraçando cada argumento com (<argumen
     }
 }
 ```
+  
+# Specification
+  
+  Podemos usá-lo para fazer queries mais "genéricas". Os métodos find() dos repositórios do Spring já recebem um specification por padrão.
+
+  Primeiro, extendemos a interface `JpaSpecificationExecutor` no repository desejado:
+
+  ```java
+  public interface LinhaRepository extends JpaRepository<Linha, Long>, JpaSpecificationExecutor<Linha> {
+  
+}
+  ```
+  
+  Agora, basta criamos um objeto do tipo `Specification` e sobreescrever o método `toPredicate`, e depois usá-lo no findAll():
+  
+  ![image](https://github.com/azl6/java-core-studies/assets/80921933/453eb945-65ad-41f1-a4f7-3c85f805c84f)
+  
+  No caso acima, o método irá nos retornar todos os `Students` cujo `id` seja **3** (olhar o retorno do método toPredicate).
