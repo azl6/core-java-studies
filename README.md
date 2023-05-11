@@ -75,3 +75,8 @@ Podemos "quebrar" o regex em argumentos, abraçando cada argumento com (<argumen
   ![image](https://github.com/azl6/java-core-studies/assets/80921933/453eb945-65ad-41f1-a4f7-3c85f805c84f)
   
   No caso acima, o método irá nos retornar todos os `Students` cujo `id` seja **3** (olhar o retorno do método toPredicate).
+  
+  Alternativamente ao método acima, é possível criar uma classe de specification "genérica" e reutilizá-la pelo código:
+  
+  ![image](https://github.com/azl6/java-core-studies/assets/80921933/1a708a09-b072-4bd8-ae41-543ad8263d3f)
+
